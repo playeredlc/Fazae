@@ -1,18 +1,15 @@
 const path = require('path');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
-const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin')
 
 const htmlPlugin = new HtmlWebPackPlugin({
   template: './public/index.html',
   filename: './index.html'
 });
 
-const reactRefreshWebpackPlugin = new ReactRefreshWebpackPlugin();
-
 module.exports = {
   mode: 'development',
   resolve: {
-    extensions: ['.jsx', '.js']
+    extensions: ['.jsx', '.js'],
   },
   entry: path.resolve(__dirname, 'src', 'index.js'),
   module: {
@@ -35,5 +32,5 @@ module.exports = {
     hot: true,
     port: 4000
   },
-  plugins: [htmlPlugin, reactRefreshWebpackPlugin]
+  plugins: [htmlPlugin]
 };
