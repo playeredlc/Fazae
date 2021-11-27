@@ -1,11 +1,11 @@
 import React from 'react';
-import CityInput from './CityInput';
+import FormsHolder from './Form/FormsHolder';
 
 function App() {
   return (
     <div>
       <h1>Hello ReactJS!</h1>
-      <CityInput />
+      <FormsHolder />
     </div>
   )
 }

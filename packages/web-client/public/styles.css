@@ -1,3 +1,9 @@
 body {
-  background-color: red;
+  background-color: #121212;
+}
+
+.city-input {
+  margin: 3% 0;
+  /* display: inline-block;
+  width: 50%; */
 }
