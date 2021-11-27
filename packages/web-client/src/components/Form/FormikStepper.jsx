@@ -1,17 +1,35 @@
 import React, { useState } from 'react';
 import { Formik, Form } from 'formik'
+import { Button } from '@material-ui/core';
+import formConfig from './formikConfig';
 
 
-function FormikStepper({ children, ...props }) {
+export function FormikStepper({ children, ...props }) {
   const childrenArray = React.Children.toArray(children)
-  const [step, setStep] = useState(2);
+  const [step, setStep] = useState(1);
   const currentChild = childrenArray[step];
 
+  function isLastStep() {
+    return (step === childrenArray.length -1);
+  }
   return (
-    <Formik {...props} >
-      <Form autoComplete='off'>  {currentChild} </Form>
+    <Formik
+      {...props}      
+      initialValues={ formConfig.initValues }
+      validationSchema={ formConfig.stepValidation[step] }
+      onSubmit={ async (values, helpers) => {
+        if(isLastStep()) {
+          // send values to back-end!
+        } else {
+          setStep( s => s+1 );
+        }
+      }}
+    >
+      <Form autoComplete='off'>
+        {currentChild}
+        { step > 0 ? <Button onClick={ () => setStep( s => s-1 ) }>Anterior</Button> : null }
+        <Button type='submit'> { isLastStep() ? 'Fazae' : 'Próximo' } </Button>
+      </Form>
     </Formik>
   );
 };
-
-export default FormikStepper;
