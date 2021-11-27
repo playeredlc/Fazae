@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import { Card, CardContent, Typography } from '@material-ui/core';
-import { Formik, Form } from 'formik';
 
+import FormikStepper from "./FormikStepper";
 import TripForm from "./TripForm";
 import TransportForm from "./TransportForm";
 import RentForm from "./RentForm";
@@ -12,18 +12,16 @@ export default function FormsHolder() {
   return (
     <Card>
       <CardContent>
-        <Formik
+        <FormikStepper
           initialValues={ formConfig.initValues }
           validationSchema={ formConfig.yupValidSchema }
           onSubmit={ () => {} }
         >
-          <Form autocomplete='off'>
-            <TripForm />
-            <TransportForm />
-            <RentForm />
-            <button type='submit'>Submit</button>
-          </Form>        
-        </Formik>
+          <TripForm />
+          <TransportForm />
+          <RentForm />
+          <button type='submit'>Submit</button>
+        </FormikStepper>
       </CardContent>
     </Card>
   );
