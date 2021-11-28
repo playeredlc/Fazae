@@ -9,7 +9,14 @@ import RentForm from "./RentForm";
 export default function FormsHolder() {
 
   return (
-    <Card>
+    <Card sx={{ mx: {
+      xs: 2,
+      sm: 16,
+      md: 32,
+      lg: 56,
+      xl: 64,
+     },
+    }} >
       <CardContent>
         <FormikStepper>
           <TripForm />

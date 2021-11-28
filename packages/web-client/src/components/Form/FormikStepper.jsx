@@ -2,11 +2,12 @@ import React, { useState } from 'react';
 import { Formik, Form } from 'formik'
 import { Button } from '@material-ui/core';
 import formConfig from './formikConfig';
+import { Box } from '@material-ui/system';
 
 
 export function FormikStepper({ children, ...props }) {
   const childrenArray = React.Children.toArray(children)
-  const [step, setStep] = useState(1);
+  const [step, setStep] = useState(0);
   const currentChild = childrenArray[step];
 
   function isLastStep() {
@@ -27,8 +28,10 @@ export function FormikStepper({ children, ...props }) {
     >
       <Form autoComplete='off'>
         {currentChild}
-        { step > 0 ? <Button onClick={ () => setStep( s => s-1 ) }>Anterior</Button> : null }
-        <Button type='submit'> { isLastStep() ? 'Fazae' : 'Próximo' } </Button>
+        <Box sx={{mt: 5}}>
+          { step > 0 ? <Button onClick={ () => setStep( s => s-1 ) }>Anterior</Button> : null }
+          <Button type='submit'> { isLastStep() ? 'Fazae' : 'Próximo' } </Button>
+        </Box>
       </Form>
     </Formik>
   );

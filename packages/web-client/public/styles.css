@@ -1,9 +1,12 @@
 body {
-  background-color: #121212;
+  background-color: whitesmoke;
 }
 
-.city-input {
-  margin: 3% 0;
-  /* display: inline-block;
-  width: 50%; */
+.mapboxgl-ctrl-geocoder, .mapboxgl-ctrl {
+  min-width: auto;
+  width: auto;
+}
+.mapboxgl-ctrl-geocoder--input {
+  min-width: auto;
+  width: 100%;
 }
