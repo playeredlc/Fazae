@@ -31,7 +31,7 @@ function CityInput({ name, locationHandler, ... rest }) {
     };
 
     locationHandler(resultObject);
-
+    
   });
 
   return (

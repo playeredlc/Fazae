@@ -1,11 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { TextField } from 'formik-mui';
 import { Field } from 'formik';
 import CityInput from './CityInput';
 import { Grid, Divider } from '@material-ui/core';
 import { FormLabel } from '@material-ui/core';
 
-function TripForm() {
+function TripForm({ originHandler, destinationHandler, ...rest }) {
+
   return (
     <Grid container spacing={4} flexDirection='row' >
       <Grid item xs={12} > <Divider textAlign='left'>Informações Gerais</Divider>  </Grid>
@@ -20,12 +21,12 @@ function TripForm() {
      
       <Grid item xs={6} >
         <FormLabel component="legend" sx={{pb: 1}} >Origem</FormLabel>
-        <Field name='origin' component={ CityInput } label='Origem' />        
+        <Field name='origin' component={ CityInput } label='Origem' locationHandler={originHandler} />        
       </Grid>
 
       <Grid item xs={6} >
         <FormLabel component="legend" sx={{pb: 1}} >Destino</FormLabel>
-        <Field name='destination' component={ CityInput } label='Destino' />
+        <Field name='destination' component={ CityInput } label='Destino' locationHandler={destinationHandler} />
       </Grid>
 
     </Grid>

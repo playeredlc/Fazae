@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Card, CardContent, Typography } from '@material-ui/core';
 
 import { FormikStepper } from "./FormikStepper";
@@ -7,6 +7,26 @@ import TransportForm from "./TransportForm";
 import RentForm from "./RentForm";
 
 export default function FormsHolder() {
+
+  const [origin, setOrigin] = useState({});
+  const [destination, setDestination] = useState({});
+  
+  function originHandler(originObject) {
+    if(!originObject){
+      console.log('Origin empty!');
+    } else {
+      setOrigin(originObject);
+      console.log('Origin set!');
+    }
+  };
+  function destinationHandler(destinationObject) {
+    if(!destinationObject) {
+      console.log('Destination empty');
+    } else {
+      setDestination(destinationObject);
+      console.log('Destination set!');
+    }
+  };
 
   return (
     <Card sx={{ mx: {
@@ -18,8 +38,8 @@ export default function FormsHolder() {
      },
     }} >
       <CardContent>
-        <FormikStepper>
-          <TripForm label='Viagem' />
+        <FormikStepper origin={origin} destination={destination} >
+          <TripForm label='Viagem' originHandler={originHandler} destinationHandler={destinationHandler} />
           <TransportForm label='Transporte' />
           <RentForm label='Acomodação' />
         </FormikStepper>

@@ -2,11 +2,10 @@ import React, { useState } from 'react';
 import { Formik, Form } from 'formik'
 import { Button, Grid, CircularProgress } from '@material-ui/core';
 import formConfig from './formikConfig';
-import { Box } from '@material-ui/system';
 import { Stepper, Step, StepLabel } from '@material-ui/core';
 
 
-export function FormikStepper({ children, ...props }) {
+export function FormikStepper({ children, origin, destination, ...props }) {
   const childrenArray = React.Children.toArray(children)
   const [step, setStep] = useState(0);
   const currentChild = childrenArray[step];
@@ -19,15 +18,22 @@ export function FormikStepper({ children, ...props }) {
   }
   return (
     <Formik
-      {...props}      
+      
+      {...props}
+
       initialValues={ formConfig.initValues }
       validationSchema={ formConfig.stepValidation[step] }
       onSubmit={ async (values, helpers) => {
         if(isLastStep()) {
           await sleep(5000);
-          console.log(values);
           setIsCompleted(true);
-          // send values to back-end!
+          
+          let requestObject = values;
+          requestObject.origin = origin;
+          requestObject.destination = destination;
+          
+          // send requestObject to back-end!
+
         } else {
           setStep( s => s+1 );
         }
@@ -35,7 +41,7 @@ export function FormikStepper({ children, ...props }) {
     >
       {({isSubmitting}) => (
 
-        <Form autoComplete='off'>
+        <Form autoComplete='off' >
           <Stepper sx={{mb: 8, mt: 3}} activeStep={step} alternativeLabel>
             {childrenArray.map((child, index) => (
               <Step key={child.props.label} completed={ step > index || isCompleted }>
@@ -43,6 +49,7 @@ export function FormikStepper({ children, ...props }) {
               </Step>
             ))}
           </Stepper>
+          
           {currentChild}
           <Grid container sx={{mt: 5}}>
             <Grid item xs={6} textAlign='left'>
