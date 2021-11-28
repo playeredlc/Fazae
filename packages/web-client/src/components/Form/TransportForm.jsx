@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { TextField, CheckboxWithLabel } from 'formik-mui';
 import { Field } from 'formik';
-import { Grid } from '@material-ui/core';
+import { Grid, Divider } from '@material-ui/core';
 function TransportForm() {
   const [carChecked, setCarChecked] = useState(false);
   const [busPlaneChecked, setBusPlaneChecked] = useState(false);
@@ -16,6 +16,8 @@ function TransportForm() {
 
   return (
     <Grid container spacing={4} >
+      <Grid item xs={12} > <Divider textAlign='left'>Transporte</Divider>  </Grid>
+
       <Grid item >
         <Field checked={carChecked} onChange={handleCarChange} name='byCar' type='checkbox' size='small' component={ CheckboxWithLabel } Label={{ label: 'Carro' }} />
         <Field checked={busPlaneChecked} onChange={handleBusPlaneChange} name='byBusPlane' type='checkbox' size='small' component={CheckboxWithLabel} Label={{ label: 'Ônibus/Avião' }} />

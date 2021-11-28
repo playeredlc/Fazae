@@ -19,9 +19,9 @@ export default function FormsHolder() {
     }} >
       <CardContent>
         <FormikStepper>
-          <TripForm />
-          <TransportForm />
-          <RentForm />
+          <TripForm label='Viagem' />
+          <TransportForm label='Transporte' />
+          <RentForm label='Acomodação' />
         </FormikStepper>
       </CardContent>
     </Card>
