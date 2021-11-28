@@ -7,7 +7,7 @@ import { Box } from '@material-ui/system';
 
 export function FormikStepper({ children, ...props }) {
   const childrenArray = React.Children.toArray(children)
-  const [step, setStep] = useState(1);
+  const [step, setStep] = useState(2);
   const currentChild = childrenArray[step];
 
   function isLastStep() {
