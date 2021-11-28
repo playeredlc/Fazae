@@ -19,8 +19,8 @@ function TransportForm() {
       <Grid item xs={12} > <Divider textAlign='left'>Transporte</Divider>  </Grid>
 
       <Grid item >
-        <Field checked={carChecked} onChange={handleCarChange} name='byCar' type='checkbox' size='small' component={ CheckboxWithLabel } Label={{ label: 'Carro' }} />
-        <Field checked={busPlaneChecked} onChange={handleBusPlaneChange} name='byBusPlane' type='checkbox' size='small' component={CheckboxWithLabel} Label={{ label: 'Ônibus/Avião' }} />
+        <Field onClick={handleCarChange} name='byCar' type='checkbox' size='small' component={ CheckboxWithLabel } Label={{ label: 'Carro' }} />
+        <Field onClick={handleBusPlaneChange} name='byBusPlane' type='checkbox' size='small' component={CheckboxWithLabel} Label={{ label: 'Ônibus/Avião' }} />
       </Grid>
       
       { 

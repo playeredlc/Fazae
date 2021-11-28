@@ -10,6 +10,8 @@ const tripValidation = Yup.object().shape({
 });
 
 const transportValidation = Yup.object().shape({
+  byCar: Yup.boolean(),
+  byBusPlane: Yup.boolean(),
   fuelPrice: Yup.mixed()
     .when('byCar', {
       is: true,
@@ -47,19 +49,19 @@ const formConfig = {
   initValues: {
     origin: '',
     destination: '',
-    numDays: 1,
-    numPeople: 1,
+    numDays: undefined,
+    numPeople: undefined,
     byCar: false,
     byBusPlane: false,
-    fuelPrice: 0,
-    fuelConsumption: 0,
-    transportTicket: 0,
-    houseCharge: 0,
-    extraCharge: 0,
-    breakfastCost: 0,
-    lunchCost: 0,
-    dinnerCost: 0,
-    extraEatingCost: 0,            
+    fuelPrice: undefined,
+    fuelConsumption: undefined,
+    transportTicket: undefined,
+    houseCharge: undefined,
+    extraCharge: undefined,
+    breakfastCost: undefined,
+    lunchCost: undefined,
+    dinnerCost: undefined,
+    extraEatingCost: undefined,            
   },
 };
 
