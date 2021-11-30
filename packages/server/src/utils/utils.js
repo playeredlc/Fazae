@@ -1,3 +1,15 @@
+exports.makeGeneralInfoObject = (data) => {
+  const {origin, destination, numDays, numPeople} = data;
+  const generalInfoObject = {
+    originShort: origin.shortName,
+    destinationShort: destination.shortName,
+    numDays: numDays,
+    numPeople: numPeople,
+  };
+  
+  return generalInfoObject;
+};
+
 exports.makeTripObject = (data) => {
   const { origin, destination, numDays, numPeople } = data;
   const tripObject = { 
