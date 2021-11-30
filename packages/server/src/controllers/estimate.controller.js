@@ -8,7 +8,8 @@ exports.generate = async (req, res, next) => {
     
     const transportData = estimateService.getTransportEstimation(utils.makeTransportObject(req.body), tripDistance);
     console.log(transportData);
-    // const rentData = await estimateService.getRentEstimation(utils.makeRentObject(req.body));
+    const rentData = estimateService.getRentEstimation(utils.makeRentObject(req.body));
+    console.log(rentData);
 
   } catch (err) {
     next(err);

@@ -25,7 +25,7 @@ exports.makeTransportObject = (data) => {
 };
 
 exports.makeRentObject = (data) => {  
-  const { houseCharge, extraCharge, breakfastCost, lunchCost, dinnerCost, extraEatingCost } = data;
+  const { houseCharge, extraCharge, breakfastCost, lunchCost, dinnerCost, extraEatingCost, numDays, numPeople } = data;
   const rentData = {
     houseCharge: houseCharge,
     extraCharge: extraCharge,
@@ -33,6 +33,8 @@ exports.makeRentObject = (data) => {
     lunchCost: lunchCost,
     dinnerCost: dinnerCost,
     extraEatingCost: extraEatingCost,
+    numDays: numDays,
+    numPeople: numPeople,
   };
 
   return rentData;
