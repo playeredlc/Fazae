@@ -5,8 +5,9 @@ exports.generate = async (req, res, next) => {
   try {
 
     const tripDistance = await estimateService.getTripDistance(utils.makeTripObject(req.body));
-    console.log(tripDistance);
-    // const transportData = await estimateService.getTransportEstimation(utils.makeTransportObject(req.body));
+    
+    const transportData = estimateService.getTransportEstimation(utils.makeTransportObject(req.body), tripDistance);
+    console.log(transportData);
     // const rentData = await estimateService.getRentEstimation(utils.makeRentObject(req.body));
 
   } catch (err) {

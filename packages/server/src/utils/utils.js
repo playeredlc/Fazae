@@ -11,13 +11,14 @@ exports.makeTripObject = (data) => {
 };
 
 exports.makeTransportObject = (data) => {
-  const {byCar, byBusPlane, fuelPrice, fuelConsumption, transportTicket } = data;
+  const {byCar, byBusPlane, fuelPrice, fuelConsumption, transportTicket, numPeople } = data;
   const transportObject = {
     byCar: byCar,
     byBusPlane: byBusPlane,
     fuelPrice: fuelPrice,
     fuelConsumption: fuelConsumption,
     transportTicket: transportTicket,
+    numPeople: numPeople,
   };
 
   return transportObject;

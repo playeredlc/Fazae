@@ -12,5 +12,31 @@ exports.getTripDistance = async (data) => {
   }
 };
 
-exports.getTransportEstimation = () => {};
+exports.getTransportEstimation = (data, tripDistance) => {
+  let transportCost = null;
+
+  if(data.byCar) {
+    const numCars = Math.ceil(data.numPeople / 5);
+  
+    const gasAmountLt = (tripDistance / data.fuelConsumption) * numCars;
+    const gasTotalPrice = (gasAmountLt * data.fuelPrice) / data.numPeople;
+    
+    transportCost = {
+      numCars: numCars,
+      gasAmount: gasAmountLt,
+      gasTotalPrice: gasTotalPrice
+    };
+
+  }
+  if(data.byBusPlane) {
+    transportCost = {
+      ... transportCost,
+      ticketPrice: data.transportTicket,
+    };
+  }
+
+  return transportCost;
+
+};
+
 exports.getRentEstimation = () => {};
