@@ -26,6 +26,8 @@ export function FormikStepper({ children, origin, destination, ...props }) {
 
       initialValues={ formConfig.initValues }
       validationSchema={ formConfig.stepValidation[step] }
+      validateOnChange={false}
+      validateOnBlur={false}
       
       onSubmit={ async (values, helpers) => {
         if(isLastStep()) {          
