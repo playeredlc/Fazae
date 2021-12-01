@@ -33,7 +33,7 @@ export default function FormsHolder() {
       xs: 2,
       sm: 16,
       md: 32,
-      lg: 56,
+      lg: 48,
       xl: 64,
      },
     }} >
