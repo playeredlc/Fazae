@@ -1,12 +1,9 @@
 import React from 'react';
 import { RoomOutlined, ScheduleOutlined, PeopleOutlineOutlined } from '@material-ui/icons'
 
-function EstimationHeader() {
-
-  const originShort = 'Santana do Livramento';
-  const destinationShort = 'Florianópolis'
-  const numDays = 7;
-  const numPeople = 6;
+function EstimationHeader({ data, ...rest }) {
+  
+  const { originShort, destinationShort, numDays, numPeople } = data;
 
   return (
     <div>

@@ -1,10 +1,9 @@
 import React from 'react';
 
-function RentEstimation() {
+function RentEstimation({ data, ...rest }) {
   
-  const dailyRentCharge = 86.655;
+  let { dailyRentCharge, totalRentCost } = data;
   !dailyRentCharge ? dailyRentCharge = 0 : null;
-  const totalRentCost = 693.2561;
   !totalRentCost ? totalRentCost = 0 : null;
 
   return (

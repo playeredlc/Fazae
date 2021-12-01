@@ -1,11 +1,11 @@
 import React from 'react';
-function TransportEstimation() {
+
+function TransportEstimation({ data, ...rest }) {
   
-  const numCars = 2;
-  const gasTotalPrice = 173.917867;
+  let { numCars, gasTotalPrice, ticketPrice } = data;
   !gasTotalPrice ? gasTotalPrice = 0 : null;
-  const ticketPrice = 162;
   !ticketPrice ? ticketPrice = 0 : null;
+
   let totalTransportCost = gasTotalPrice + ticketPrice;
 
   return (

@@ -1,4 +1,5 @@
 import React from 'react';
+import { useLocation } from 'react-router-dom';
 import { Card, Divider } from '@material-ui/core';
 import { LocalGasStationOutlined, HomeWorkOutlined, FastfoodOutlined } from '@material-ui/icons'
 import EstimationHeader from './EstimationHeader';
@@ -9,6 +10,7 @@ import TotalEstimation from './TotalEstimation'
 
 
 function Estimation() {
+  const location = useLocation();
 
   return (
     <Card sx={{ mx: {
@@ -22,18 +24,18 @@ function Estimation() {
      px: 2,
      textAlign: 'left'
     }}>
-      <EstimationHeader />
+      <EstimationHeader data={location.state} />
       <Divider textAlign='left' ><LocalGasStationOutlined fontSize='small' color='disabled' /></Divider>
-      <TransportEstimation />
+      <TransportEstimation data={location.state} />
       <br />
       <Divider textAlign='left' ><HomeWorkOutlined fontSize='small' color='disabled' /></Divider>
-      <RentEstimation />
+      <RentEstimation data={location.state} />
       <br />
       <Divider textAlign='left' ><FastfoodOutlined fontSize='small' color='disabled' /></Divider>
-      <EatingEstimation />
+      <EatingEstimation data={location.state} />
       <br /><br />
       <Divider textAlign='right' variant='inset' >Total</Divider>
-      <TotalEstimation />
+      <TotalEstimation data={location.state} />
     </Card>
     
   );

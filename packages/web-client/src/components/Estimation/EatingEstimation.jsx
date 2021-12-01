@@ -1,9 +1,9 @@
 import React from 'react';
 
-function EatingEstimation() {
-  
-  const dailyEatingCost = 75;
-  const totalEatingCost = 600;
+function EatingEstimation({ data, ...rest }) {
+  let { dailyEatingCost, totalEatingCost } = data;
+  !dailyEatingCost ? dailyEatingCost = 0 : null;
+  !totalEatingCost ? totalEatingCost = 0 : null;
 
   return (
     <div>

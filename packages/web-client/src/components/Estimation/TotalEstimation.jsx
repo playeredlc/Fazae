@@ -1,14 +1,13 @@
 import React from 'react';
 
-function TotalEstimation() {
-  const gasTotalPrice = 173.91786666666667;
+function TotalEstimation({ data, ...rest }) {
+  let { gasTotalPrice, totalRentCost, totalEatingCost, ticketPrice } = data;
   !gasTotalPrice ? gasTotalPrice = 0 : null;
-  const totalRentCost = 693.2;
   !totalRentCost ? totalRentCost = 0 : null;
-  const totalEatingCost = 600;
   !totalEatingCost ? totalEatingCost = 0 : null;
+  !ticketPrice ? ticketPrice = 0 : null;
 
-  const total = gasTotalPrice + totalRentCost + totalEatingCost;
+  const total = gasTotalPrice + ticketPrice + totalRentCost + totalEatingCost;
 
   return (
     <div>

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Formik, Form } from 'formik'
 import { Button, Grid, CircularProgress } from '@material-ui/core';
 import formConfig from './formikConfig';
@@ -7,16 +8,17 @@ import axios from 'axios';
 
 
 export function FormikStepper({ children, origin, destination, ...props }) {
+  const navigate = useNavigate();
+
   const childrenArray = React.Children.toArray(children)
   const [step, setStep] = useState(0);
   const currentChild = childrenArray[step];
   const [isCompleted, setIsCompleted] = useState(false);
 
-  const sleep = (time) => new Promise((acc) => setTimeout(acc, time));
-
   function isLastStep() {
     return (step === childrenArray.length -1);
-  }
+  };
+
   return (
     <Formik
       
@@ -24,27 +26,29 @@ export function FormikStepper({ children, origin, destination, ...props }) {
 
       initialValues={ formConfig.initValues }
       validationSchema={ formConfig.stepValidation[step] }
+      
       onSubmit={ async (values, helpers) => {
-        if(isLastStep()) {
-          // await sleep(5000);
-          
+        if(isLastStep()) {          
           let requestObject = values;
           requestObject.origin = origin;
           requestObject.destination = destination;
-          // console.log(requestObject);
           
           const response = await axios({
             method: 'post',
             url: 'http://localhost:3000/estimate',
             data: requestObject,
           });
-          console.log(response);
           setIsCompleted(true);
+          
+          // check if resposne.status !== 200 and redirect to error page.
+          const stateObject = { ... response.data };
+          navigate('/resultados', { state: stateObject });
 
         } else {
           setStep( s => s+1 );
         }
       }}
+
     >
       {({isSubmitting}) => (
 
