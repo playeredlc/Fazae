@@ -3,6 +3,7 @@ import { Formik, Form } from 'formik'
 import { Button, Grid, CircularProgress } from '@material-ui/core';
 import formConfig from './formikConfig';
 import { Stepper, Step, StepLabel } from '@material-ui/core';
+import axios from 'axios';
 
 
 export function FormikStepper({ children, origin, destination, ...props }) {
@@ -25,14 +26,20 @@ export function FormikStepper({ children, origin, destination, ...props }) {
       validationSchema={ formConfig.stepValidation[step] }
       onSubmit={ async (values, helpers) => {
         if(isLastStep()) {
-          await sleep(5000);
-          setIsCompleted(true);
+          // await sleep(5000);
           
           let requestObject = values;
           requestObject.origin = origin;
           requestObject.destination = destination;
+          // console.log(requestObject);
           
-          // send requestObject to back-end!
+          const response = await axios({
+            method: 'post',
+            url: 'http://localhost:3000/estimate',
+            data: requestObject,
+          });
+          console.log(response);
+          setIsCompleted(true);
 
         } else {
           setStep( s => s+1 );

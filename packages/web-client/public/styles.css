@@ -10,3 +10,8 @@ body {
   min-width: auto;
   width: 100%;
 }
+
+.item-description {
+  justify-content: space-between;
+  display: flex;
+}
