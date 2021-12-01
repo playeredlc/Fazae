@@ -1,5 +1,6 @@
 body {
   background-color: whitesmoke;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .mapboxgl-ctrl-geocoder, .mapboxgl-ctrl {
@@ -14,4 +15,11 @@ body {
 .item-description {
   justify-content: space-between;
   display: flex;
+}
+.header {
+  font-weight: 400;
+}
+.item {
+  font-size: 0.95rem;
+  font-weight: 300;
 }

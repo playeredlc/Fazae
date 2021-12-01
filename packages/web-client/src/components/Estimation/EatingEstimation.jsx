@@ -8,8 +8,8 @@ function EatingEstimation({ data, ...rest }) {
   return (
     <div>
       <div className='item-description'>
-        <div>Custo diário alimentação</div>
-        <div>R$ {dailyEatingCost.toFixed(2).replace('.', ',')}</div>
+        <div className='item'>Custo diário alimentação</div>
+        <div className='item'>R$ {dailyEatingCost.toFixed(2).replace('.', ',')}</div>
       </div>
       <br />
       <div className='item-description'>

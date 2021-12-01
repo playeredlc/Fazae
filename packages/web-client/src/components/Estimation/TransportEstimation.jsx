@@ -13,20 +13,20 @@ function TransportEstimation({ data, ...rest }) {
       { gasTotalPrice ? 
         <div>
           <div className='item-description' >
-            <div>{numCars === 1 ? 'Carro necessário' : 'Carros necessários'}</div>
-            <div>{numCars}</div>
+            <div className='item'>{numCars === 1 ? 'Carro necessário' : 'Carros necessários'}</div>
+            <div className='item'>{numCars}</div>
           </div>
           <div className='item-description' >
-            <div>Gasolina</div>
-            <div>R${gasTotalPrice.toFixed(2).replace('.', ',')}</div>
+            <div className='item'>Gasolina</div>
+            <div className='item'>R${gasTotalPrice.toFixed(2).replace('.', ',')}</div>
           </div>
         </div>
       : null
       }
       { ticketPrice ?
         <div className='item-description'>
-          <div>Passagem</div>
-          <div>R$ {ticketPrice.toFixed(2).replace('.', ',')}</div>
+          <div className='item'>Passagem</div>
+          <div className='item'>R$ {ticketPrice.toFixed(2).replace('.', ',')}</div>
         </div>
         : null
       }

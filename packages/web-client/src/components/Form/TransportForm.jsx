@@ -18,7 +18,7 @@ function TransportForm() {
     <Grid container spacing={4} >
       <Grid item xs={12} > <Divider textAlign='left'>Transporte</Divider>  </Grid>
 
-      <Grid item >
+      <Grid item xs={12}>
         <Field onClick={handleCarChange} name='byCar' type='checkbox' size='small' component={ CheckboxWithLabel } Label={{ label: 'Carro' }} />
         <Field onClick={handleBusPlaneChange} name='byBusPlane' type='checkbox' size='small' component={CheckboxWithLabel} Label={{ label: 'Ônibus/Avião' }} />
       </Grid>

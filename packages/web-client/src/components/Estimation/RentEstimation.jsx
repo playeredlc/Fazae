@@ -9,8 +9,8 @@ function RentEstimation({ data, ...rest }) {
   return (
     <div>
       <div className='item-description'>
-        <div>Aluguel diária</div>
-        <div>R$ {dailyRentCharge.toFixed(2).replace('.', ',')}</div>
+        <div className='item'>Aluguel diária</div>
+        <div className='item'>R$ {dailyRentCharge.toFixed(2).replace('.', ',')}</div>
       </div>
       <br />
       <div className='item-description'>
