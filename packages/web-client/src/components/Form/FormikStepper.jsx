@@ -37,10 +37,11 @@ export function FormikStepper({ children, origin, destination, ...props }) {
           
           const response = await axios({
             method: 'post',
-            url: 'http://localhost:3000/estimate',
+            url: 'https://fazae-api.herokuapp.com/estimate',
             data: requestObject,
           });
           setIsCompleted(true);
+          console.log(response);
           
           // check if resposne.status !== 200 and redirect to error page.
           const stateObject = { ... response.data };
