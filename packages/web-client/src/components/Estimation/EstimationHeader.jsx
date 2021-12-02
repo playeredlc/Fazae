@@ -1,5 +1,5 @@
 import React from 'react';
-import { RoomOutlined, ScheduleOutlined, PeopleOutlineOutlined } from '@material-ui/icons'
+import { RoomOutlined, ScheduleOutlined, PeopleOutlineOutlined } from '@mui/icons-material';
 
 function EstimationHeader({ data, ...rest }) {
   

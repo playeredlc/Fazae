@@ -1,7 +1,7 @@
 import React from 'react';
 import { useLocation } from 'react-router-dom';
 import { Card, Divider } from '@material-ui/core';
-import { LocalGasStationOutlined, HomeWorkOutlined, FastfoodOutlined } from '@material-ui/icons'
+import { LocalGasStationOutlined, HomeWorkOutlined, FastfoodOutlined } from '@mui/icons-material';
 import EstimationHeader from './EstimationHeader';
 import TransportEstimation from './TransportEstimation';
 import RentEstimation from './RentEstimation';
