@@ -4,9 +4,7 @@
 
 <div align="center">
 
-<strong>
-Não sabe exatamente quanto vai precisar gastar para realizar aquela viagem com a família ou amigos? Se preocupe com o que importa e deixe que o <i>Fazae</i> faça as estimativas para você.
-</strong><br>
+<strong>Não sabe exatamente quanto vai precisar gastar para realizar aquela viagem com a família ou amigos? Se preocupe com o que importa e deixe que o <i>Fazae</i> faça as estimativas para você.</strong><br>
 
 [![NPM](https://img.shields.io/npm/l/react)](https://github.com/playeredlc/Fazae/blob/master/LICENSE)
 [![Netlify Status](https://api.netlify.com/api/v1/badges/ed3047a4-e327-4685-b052-fe860d1f83fc/deploy-status)](https://fazae.netlify.app/)
