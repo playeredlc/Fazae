@@ -9,6 +9,6 @@ exports.getRouteInfo = async (origin, destination) => {
     return response.data;
 
   } catch(err) {
-    return err.message;
+    return err;
   }
 };

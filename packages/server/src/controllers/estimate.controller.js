@@ -10,6 +10,7 @@ exports.generate = async (req, res, next) => {
     const rentData = estimateService.getRentEstimation(utils.makeRentObject(req.body));
 
     const response = {
+      status: 200,
       ... generalData,
       ... tripDistance,
       ... transportData,
