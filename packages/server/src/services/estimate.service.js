@@ -51,10 +51,10 @@ exports.getTransportEstimation = (data, tripDistance) => {
 
 exports.getRentEstimation = (data) => {
   try {
-    const dailyRentCharge = (data.houseCharge/data.numPeople) + (data.extraCharge/data.numPeople);
+    const dailyRentCharge = ((data.houseCharge) + (data.extraCharge/data.numDays));
     const dailyEatingCost = Number(data.breakfastCost + data.lunchCost + data.dinnerCost + data.extraEatingCost);
     
-    const totalRentCost = dailyRentCharge * data.numDays;
+    const totalRentCost = (dailyRentCharge * data.numDays) / data.numPeople;
     const totalEatingCost = dailyEatingCost * data.numDays;
     
     rentCost = {

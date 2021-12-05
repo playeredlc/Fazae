@@ -16,7 +16,7 @@ function RentForm() {
         <Field name='extraCharge' type='number' component={ TextField } label='Taxas' />
       </Grid>
       
-      <Grid item xs={12} > <Divider textAlign='left' >Alimentação</Divider>  </Grid>
+      <Grid item xs={12} > <Divider textAlign='left' >Alimentação <small>/pessoa</small></Divider>  </Grid>
 
       <Grid item item xs={6} >
         <Field name='breakfastCost' type='number' component={ TextField } label='Café' />
