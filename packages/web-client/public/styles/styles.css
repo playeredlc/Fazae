@@ -43,3 +43,12 @@ body {
   color: inherit;
   text-decoration: none;
 }
+
+.error-box {
+  border: solid rgb(0,0, 0, 0.3) 3px;
+  padding: 2%;
+  border-radius: 8px;
+  background-color: rgb(255, 0, 0, 0.3);
+  width: 75%;
+  margin: 5% auto;
+}

@@ -4,6 +4,8 @@ import FormsHolder from './Form/FormsHolder';
 import Estimation from './Estimation/Estimation';
 import Header from './Header';
 import Footer from './Footer';
+import Error from './Error';
+import '../../public/styles/styles.css'
 
 function App() {
   return (
@@ -12,6 +14,7 @@ function App() {
       <Routes>
         <Route exact path='/' element={<FormsHolder />} />
         <Route exact path='/resultados' element={<Estimation />} />
+        <Route exact path='/error' element={<Error />} />
       </Routes>
       <Footer />
     </Router>

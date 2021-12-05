@@ -8,6 +8,9 @@ import axios from 'axios';
 
 
 export function FormikStepper({ children, origin, destination, ...props }) {
+  const prodApiURL = 'https://fazae-api.herokuapp.com/estimate';
+  const devApiURL = 'http://localhost:3000/estimate';
+  
   const navigate = useNavigate();
 
   const childrenArray = React.Children.toArray(children)
@@ -35,17 +38,26 @@ export function FormikStepper({ children, origin, destination, ...props }) {
           requestObject.origin = origin;
           requestObject.destination = destination;
           
-          const response = await axios({
-            method: 'post',
-            url: 'https://fazae-api.herokuapp.com/estimate',
-            data: requestObject,
-          });
-          setIsCompleted(true);
-          console.log(response);
+          try{
+            const response = await axios({
+              method: 'post',
+              url: devApiURL,
+              data: requestObject,
+            });
+            
+            if(response.data.status !== 200) {
+              console.log(response);
+              navigate('/error', { state: response.data });
+            } else {
+              const stateObject = { ... response.data };
+              setIsCompleted(true);
+              navigate('/resultados', { state: stateObject });
+            }            
+            
+          } catch (err) {
+            navigate('/error', { state: err });
+          }
           
-          // check if resposne.status !== 200 and redirect to error page.
-          const stateObject = { ... response.data };
-          navigate('/resultados', { state: stateObject });
 
         } else {
           setStep( s => s+1 );

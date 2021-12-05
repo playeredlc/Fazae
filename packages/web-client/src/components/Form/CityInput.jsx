@@ -2,7 +2,7 @@ import React, { useRef, useEffect } from 'react';
 
 import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
 import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css';
-import '../../../public/styles.css' // override some of the library styles.
+import '../../../public/styles/styles.css' // override some of the library styles.
 
 function CityInput({ name, locationHandler, ... rest }) {  
   const accessPublicToken = 'pk.eyJ1IjoicGxheWVyZWRsYyIsImEiOiJja3dlY29qYWQwMzFxMm91c3ZkNmthMW1qIn0.WSmr7IsPkE7WJyKpsBdJBg';
