@@ -2,6 +2,11 @@ const mapboxProvider = require('../providers/mapboxProvider');
 
 exports.getTripDistance = async (data) => {
   try {
+    
+    if(!data.origin || !data.origin) {
+      return null;
+    }
+    
     const mapboxResponse = await mapboxProvider.getRouteInfo(data.origin.coord, data.destination.coord);
     
     if(mapboxResponse instanceof Error) {
@@ -19,8 +24,13 @@ exports.getTripDistance = async (data) => {
 
 exports.getTransportEstimation = (data, tripDistance) => {
   try {
+    
+    if(!tripDistance) {
+      return null;
+    }
+
     let transportCost = null;
-  
+
     if(data.byCar) {
       const numCars = Math.ceil(data.numPeople / 5);
     
