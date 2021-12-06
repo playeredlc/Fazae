@@ -46,7 +46,6 @@ export function FormikStepper({ children, origin, destination, ...props }) {
             });
             
             if(response.data.status !== 200) {
-              console.log(response);
               navigate('/error', { state: response.data });
             } else {
               const stateObject = { ... response.data };

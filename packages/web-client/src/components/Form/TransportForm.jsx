@@ -26,7 +26,7 @@ function TransportForm() {
       { 
         carChecked ? 
           <Grid item >
-            <Field name='fuelPrice' type='number' component={ TextField } label='Preço combustível' />
+            <Field name='fuelPrice' type='number' component={ TextField } label='Preço combustível' size='small' />
           </Grid>
         : null
       }
@@ -34,14 +34,14 @@ function TransportForm() {
       {
         carChecked ?
           <Grid item >
-            <Field name='fuelConsumption' type='number' component={ TextField } label='Consumo (Km/L)' />
+            <Field name='fuelConsumption' type='number' component={ TextField } label='Consumo (Km/L)' size='small' />
           </Grid>
         : null
       }
 
       { busPlaneChecked ? 
         <Grid item >
-          <Field name='transportTicket' type='number' component={ TextField } label='Passagem' />
+          <Field name='transportTicket' type='number' component={ TextField } label='Passagem' size='small' />
         </Grid>
       : null
       }

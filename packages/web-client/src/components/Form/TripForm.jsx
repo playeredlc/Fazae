@@ -12,11 +12,11 @@ function TripForm({ originHandler, destinationHandler, ...rest }) {
       <Grid item xs={12} > <Divider textAlign='left'>Informações Gerais</Divider>  </Grid>
       
       <Grid item xs={12} align='left'>
-        <Field sx={{ width: '75%' }} name='numDays' type='number' component={ TextField } label='Dias de viagem' />
+        <Field sx={{ width: '75%' }} name='numDays' type='number' component={ TextField } label='Dias de viagem *' size='small' />
       </Grid>
       
       <Grid item xs={12} align='left' >
-        <Field sx={{ width: '75%' }} name='numPeople' type='number' component={ TextField } label='Número de pessoas' />
+        <Field sx={{ width: '75%' }} name='numPeople' type='number' component={ TextField } label='Número de pessoas *' size='small' />
       </Grid>
      
       <Grid item xs={6} >

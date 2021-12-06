@@ -16,7 +16,7 @@ export default function FormsHolder() {
       console.log('Origin empty!');
     } else {
       setOrigin(originObject);
-      console.log('Origin set!');
+      // console.log('Origin set!');
     }
   };
   function destinationHandler(destinationObject) {
@@ -24,7 +24,7 @@ export default function FormsHolder() {
       console.log('Destination empty');
     } else {
       setDestination(destinationObject);
-      console.log('Destination set!');
+        // console.log('Destination set!');
     }
   };
 
