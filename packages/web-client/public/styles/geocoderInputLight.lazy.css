@@ -21,20 +21,6 @@
   border-radius: 5px;
   outline-color: rgb(153, 153, 153);
 }
-.mapboxgl-ctrl-geocoder--icon-close {
-  padding-top: 5px;
-  margin: 0;
-  background-color: #f3f3f3;
-}
-.mapboxgl-ctrl-geocoder .suggestions > li > a {
-  color: #404040;
-  background-color: #f3f3f3;
-}
-.mapboxgl-ctrl-geocoder .suggestions > .active > a,
-.mapboxgl-ctrl-geocoder .suggestions > li > a:hover {
-  color: #323232;
-  background-color: #f3f3f3;
-}
 
 .footer {
   color: rgb(153, 153, 153, 0.5);
