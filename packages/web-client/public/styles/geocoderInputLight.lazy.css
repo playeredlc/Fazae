@@ -1,0 +1,41 @@
+.mapboxgl-ctrl-geocoder {
+  font-family: "Montserrat", sans-serif;
+  box-shadow: none;
+  outline: thin solid;
+  outline-color: rgb(153, 153, 153, 0.5);
+  border-radius: 5px;
+}
+.mapboxgl-ctrl-geocoder--input {
+  background-color: #fff;
+  color: black;
+  min-width: auto;
+  width: 100%;
+}
+.mapboxgl-ctrl-geocoder, .mapboxgl-ctrl {
+  min-width: auto;
+  width: auto;
+}
+.mapboxgl-ctrl-geocoder--input:focus {
+  color: black;
+  outline: thin solid;
+  border-radius: 5px;
+  outline-color: rgb(153, 153, 153);
+}
+.mapboxgl-ctrl-geocoder--icon-close {
+  padding-top: 5px;
+  margin: 0;
+  background-color: #f3f3f3;
+}
+.mapboxgl-ctrl-geocoder .suggestions > li > a {
+  color: #404040;
+  background-color: #f3f3f3;
+}
+.mapboxgl-ctrl-geocoder .suggestions > .active > a,
+.mapboxgl-ctrl-geocoder .suggestions > li > a:hover {
+  color: #323232;
+  background-color: #f3f3f3;
+}
+
+.footer {
+  color: rgb(153, 153, 153, 0.5);
+}
