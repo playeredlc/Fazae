@@ -1,9 +1,10 @@
 const mapboxProvider = require('../providers/mapboxProvider');
+const isEmpty = require('../utils/utils').isEmpty;
 
 exports.getTripDistance = async (data) => {
   try {
-    
-    if(!data.origin || !data.origin) {
+
+    if(isEmpty(data.origin) || isEmpty(data.destination)) {
       return null;
     }
     
@@ -24,26 +25,26 @@ exports.getTripDistance = async (data) => {
 
 exports.getTransportEstimation = (data, tripDistance) => {
   try {
-    
-    if(!tripDistance) {
-      return null;
-    }
 
     let transportCost = null;
-
-    if(data.byCar) {
-      const numCars = Math.ceil(data.numPeople / 5);
     
-      const gasAmountLt = (tripDistance / data.fuelConsumption) * numCars;
-      const gasTotalPrice = (gasAmountLt * data.fuelPrice) / data.numPeople;
+    if(!tripDistance) {
+      transportCost = {};
+    } else {
+      if(data.byCar) {
+        const numCars = Math.ceil(data.numPeople / 5);
       
-      transportCost = {
-        numCars: numCars,
-        gasAmount: gasAmountLt,
-        gasTotalPrice: gasTotalPrice
-      };
-  
+        const gasAmountLt = (tripDistance / data.fuelConsumption) * numCars;
+        const gasTotalPrice = (gasAmountLt * data.fuelPrice) / data.numPeople;
+        
+        transportCost = {
+          numCars: numCars,
+          gasAmount: gasAmountLt,
+          gasTotalPrice: gasTotalPrice
+        };
+      }
     }
+
     if(data.byBusPlane) {
       transportCost = {
         ... transportCost,

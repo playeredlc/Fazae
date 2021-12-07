@@ -51,3 +51,8 @@ exports.makeRentObject = (data) => {
 
   return rentData;
 };
+
+exports.isEmpty = (obj) => {
+  return Object.keys(obj).length === 0;
+};
+
