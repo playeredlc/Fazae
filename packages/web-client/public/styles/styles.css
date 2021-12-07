@@ -1,5 +1,5 @@
 html {
-  background-color: whitesmoke;
+  background-color: #121212;
   font-family: 'Montserrat', sans-serif;
 }
 
@@ -10,6 +10,7 @@ html {
 .mapboxgl-ctrl-geocoder--input {
   min-width: auto;
   width: 100%;
+  background: #212121;
 }
 .mapboxgl-ctrl-geocoder--input:focus {
   outline: thin solid;
