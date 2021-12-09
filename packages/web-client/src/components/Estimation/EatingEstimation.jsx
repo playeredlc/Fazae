@@ -14,7 +14,7 @@ function EatingEstimation({ data, ...rest }) {
       <br />
       <div className='item-description'>
         <div><strong>Subtotal</strong></div>
-        <div>R$ {totalEatingCost.toFixed(2).replace('.', ',')} /pessoa</div>
+        <div>R$ {totalEatingCost.toFixed(2).replace('.', ',')} <small>/pessoa</small></div>
       </div>
     </div>
   );

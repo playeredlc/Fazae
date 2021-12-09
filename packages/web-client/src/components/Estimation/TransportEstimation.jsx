@@ -33,7 +33,7 @@ function TransportEstimation({ data, ...rest }) {
       <br />
       <div className='item-description'>
         <div><strong>Subtotal</strong></div>
-        <div>R$ {totalTransportCost.toFixed(2).replace('.', ',')} /pessoa</div>
+        <div>R$ {totalTransportCost.toFixed(2).replace('.', ',')} <small>/pessoa</small></div>
       </div>
     </div>
   );
