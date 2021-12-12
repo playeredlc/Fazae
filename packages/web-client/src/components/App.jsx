@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import persistedState from '../../utils/persistedState';
 import FormsHolder from './Form/FormsHolder';
 import Estimation from './Estimation/Estimation';
 import Header from './Header';
@@ -18,7 +19,7 @@ function App() {
   mapboxStyles.use();
   generalStyles.use();
 
-  const [mode, setMode] = useState('dark');
+  const [mode, setMode] = persistedState('theme', 'dark');
   
   useEffect(() => {
     if(mode === 'dark') {
