@@ -10,7 +10,7 @@ function EstimationHeader({ data, ...rest }) {
 
   return (
     <div>
-      <p className='estimation-header' >
+      <div className='estimation-header' >
         { hasInfo
         ?
           <div><RoomOutlined fontSize='small' color='disabled' /> {originShort} ⟶ {destinationShort}.<br /></div>
@@ -19,7 +19,7 @@ function EstimationHeader({ data, ...rest }) {
         }
         <PeopleOutlineOutlined fontSize='small' color='disabled' /> {numPeople} {numPeople === 1 ? 'pessoa' : 'pessoas'}. <br />
         <ScheduleOutlined fontSize='small' color='disabled' /> {numDays} {numDays === 1 ? 'dia' : 'dias'}.<br />
-      </p>
+      </div>
     </div>
   );
 };

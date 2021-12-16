@@ -7,6 +7,8 @@ html {
 }
 .estimation-header {
   font-weight: 400;
+  margin-top: 16px;
+  margin-bottom: 16px;
 }
 .item {
   font-size: 0.95rem;
